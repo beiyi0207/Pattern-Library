@@ -1,0 +1,156 @@
+<html>
+  <head>
+
+    <link href="../../stylesheets/styleguide.css" rel="stylesheet">
+    <link href="../../stylesheets/icons.css" rel="stylesheet">
+    <link href="nav.css" rel="stylesheet">
+    <link href="../layout.css" rel="stylesheet">
+
+    <script src="../../js/jquery.js"></script>
+    <script src="nav.js"></script>
+
+  </head>
+  <body>
+    <h1>Navigation</h1>
+
+    <section class="blocks">
+      <h2>Basic Main Navigation</h2>
+      <p>The basic main navigation bar is great when you have only a few navigation items.</p>
+      <p>To indicate a current item, add class <code>main-nav__link--current</code>.</p>
+      <div class="app-container">
+        <header class="app-header">
+          <a href="#!" class="main-nav__drawer-knob"></a>
+        </header>
+        <nav class="main-nav">
+          <ul class="main-nav__list">
+            <li class="main-nav__item">
+              <a href="#!" class="main-nav__link main-nav__link--current">Current Main Item</a>
+            </li>
+            <li class="main-nav__item">
+              <a href="#!" class="main-nav__link">Main Item</a>
+            </li>
+            <li class="main-nav__item">
+              <a href="#!" class="main-nav__link">Main Item</a>
+            </li>
+          </ul>
+          <ul class="main-nav__list main-nav__list--secondary">
+            <li class="main-nav__item">
+              <a href="#!" class="main-nav__link">Secondary Item</a>
+            </li>
+          </ul>
+        </nav>
+        <section class="main">Hello World!</section>
+      </div>
+    </section>
+
+    <section class="blocks">
+      <h2>Item Icons</h2>
+      <p>To add an icon to a navigation item, use class <code>main-nav__icon</code>, followed by the class name of the icon.</p>
+      <div class="app-container">
+        <header class="app-header">
+          <a href="#!" class="main-nav__drawer-knob"></a>
+        </header>
+        <nav class="main-nav">
+          <ul class="main-nav__list">
+            <li class="main-nav__item">
+              <a href="#!" class="main-nav__link main-nav__link--current">
+                <span class="main-nav__icon icon-home"></span> Home
+              </a>
+            </li>
+            <li class="main-nav__item">
+              <a href="#!" class="main-nav__link">
+                <span class="main-nav__icon icon-dollar-sign"></span> Bills
+              </a>
+            </li>
+            <li class="main-nav__item">
+              <a href="#!" class="main-nav__link">
+                <span class="main-nav__icon icon-calendar"></span> Appointments
+              </a>
+            </li>
+          </ul>
+          <ul class="main-nav__list main-nav__list--secondary">
+            <li class="main-nav__item">
+              <a href="#!" class="main-nav__link">
+                <span class="main-nav__icon icon-signout"></span> Sign Out
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <section class="main">Hello World!</section>
+      </div>
+    </section>
+
+    <section class="blocks">
+      <h2>Dropdown Menu</h2>
+      <p>Always use both <code>hover</code> and <code>click</code> to trigger dropdown menus. Although it is possible to detect whether a device supports touch screen or not, it is safer to always include click support, and never assume a device is exclusively touch or the other.</p>
+      <div class="app-container">
+        <header class="app-header">
+          <a href="#!" class="main-nav__drawer-knob"></a>
+        </header>
+        <nav class="main-nav">
+          <ul class="main-nav__list">
+            <li class="main-nav__item main-nav__item--dropdown">
+              <a href="#!" class="main-nav__link main-nav__link--dropdown">Current Main Item</a>
+              <ul class="dropdown-nav__list">
+                <li class="dropdown-nav__item">
+                  <a href="#!" class="dropdown-nav__link dropdown-nav__link--current">Dropdown Item One</a>
+                </li>
+                <li class="dropdown-nav__item">
+                  <a href="#!" class="dropdown-nav__link">Dropdown Item Two</a>
+                </li>
+                <li class="dropdown-nav__item">
+                  <a href="#!" class="dropdown-nav__link">Dropdown Item Three</a>
+                </li>
+              </ul>
+            </li>
+            <li class="main-nav__item main-nav__item--dropdown">
+              <a href="#!" class="main-nav__link main-nav__link--dropdown">Main Item</a>
+              <ul class="dropdown-nav__list">
+                <li class="dropdown-nav__item">
+                  <a href="#!" class="dropdown-nav__link">Dropdown Item One</a>
+                </li>
+                <li class="dropdown-nav__item">
+                  <a href="#!" class="dropdown-nav__link">Dropdown Item Two</a>
+                </li>
+                <li class="dropdown-nav__item">
+                  <a href="#!" class="dropdown-nav__link">Dropdown Item Three</a>
+                </li>
+              </ul>
+            </li>
+            <li class="main-nav__item main-nav__item--dropdown">
+              <a href="#!" class="main-nav__link main-nav__link--dropdown">Main Item</a>
+              <ul class="dropdown-nav__list">
+                <li class="dropdown-nav__item">
+                  <a href="#!" class="dropdown-nav__link">Dropdown Item One</a>
+                </li>
+                <li class="dropdown-nav__item">
+                  <a href="#!" class="dropdown-nav__link">Dropdown Item Two</a>
+                </li>
+                <li class="dropdown-nav__item">
+                  <a href="#!" class="dropdown-nav__link">Dropdown Item Three</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="main-nav__list main-nav__list--secondary">
+            <li class="main-nav__item main-nav__item--dropdown">
+              <a href="#!" class="main-nav__link main-nav__link--dropdown">Secondary Item</a>
+              <ul class="dropdown-nav__list dropdown-nav__list--secondary">
+                <li class="dropdown-nav__item">
+                  <a href="#!" class="dropdown-nav__link">Dropdown Item One</a>
+                </li>
+                <li class="dropdown-nav__item">
+                  <a href="#!" class="dropdown-nav__link">Dropdown Item Two</a>
+                </li>
+                <li class="dropdown-nav__item">
+                  <a href="#!" class="dropdown-nav__link">Dropdown Item Three</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <section class="main">Hello World!</section>
+      </div>
+    </section>
+  </body>
+</html>
