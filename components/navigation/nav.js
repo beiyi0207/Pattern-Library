@@ -1,4 +1,8 @@
-$(document).ready(function(){
+ $(document).ready(function(){
+  $('.main-nav__drawer-knob, .main-nav__item--dropdown .main-nav__link').click(function(event) {
+    event.preventDefault();
+  })
+
   // Show/Hide Main Navigation as a drawer.
 	$('.main-nav__drawer-knob').each(function() {
 		$(this).click(function() {
@@ -22,23 +26,25 @@ $(document).ready(function(){
 
 	// Click main content to close the drawer. Using '.main' as an example here.
 	$('.main').click(function() {
-    	if ($('.app-container').hasClass('app-container--drawer-open')) {
-        	$('.app-container').removeClass('app-container--drawer-open');
-      	}
-      $('.dropdown-nav__list').hide();
-      $('.main-nav__link--dropdown-expanded').toggleClass('main-nav__link--dropdown main-nav__link--dropdown-expanded');
-    });
+  	if ($('.app-container').hasClass('app-container--drawer-open')) {
+      	$('.app-container').removeClass('app-container--drawer-open');
+    	}
+    $('.dropdown-nav__list').hide();
+    $('.main-nav__link--dropdown-expanded').toggleClass('main-nav__link--dropdown main-nav__link--dropdown-expanded');
+  });
 
-  // Switch between dropdown links by either clicking or hovering
+  // Switch between dropdown links
 	$('.main-nav__item--dropdown .main-nav__link').each(function() {
 		$(this).click(function() {
       if ($('.main-nav__item--dropdown .main-nav__link').not(this).hasClass('main-nav__link--dropdown-expanded')) {
-        $('.main-nav__item--dropdown .main-nav__link').not(this).toggleClass('main-nav__link--dropdown-expanded').addClass('main-nav__link--dropdown');
+        $('.main-nav__item--dropdown .main-nav__link').not(this).removeClass('main-nav__link--dropdown-expanded').addClass('main-nav__link--dropdown');
         $('.main-nav__item--dropdown .main-nav__link').not(this).next().slideUp(200);
       }
 			$(this).toggleClass('main-nav__link--dropdown main-nav__link--dropdown-expanded');
       $(this).next().slideToggle(200);
 		})
 	})
+
+  //
 
 });
