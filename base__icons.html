@@ -1,0 +1,525 @@
+<html>
+  <head>
+    <link href="stylesheets/_icons.css" rel="stylesheet">
+    <link href="stylesheets/_typography.css" rel="stylesheet">
+    <link href="stylesheets/_layout.css" rel="stylesheet">
+    <link href="stylesheets/_nav.css" rel="stylesheet">
+    <link href="stylesheets/base-icons.css" rel="stylesheet">
+
+    <script src="js/jquery.js"></script>
+    <script src="js/nav.js"></script>
+  </head>
+
+  <body>
+    <div class="app-container">
+      <nav class="main-nav">
+        <ul class="main-nav__list">
+          <li class="main-nav__item">
+            <a href="#!" class="main-nav__link"><span class="main-nav__icon icon-home"></span> Home</a>
+          </li>
+          <li class="main-nav__item main-nav__item--dropdown">
+            <a href="#!" class="main-nav__link main-nav__link--dropdown">Base</a>
+            <ul class="dropdown-nav__list">
+              <li class="dropdown-nav__item">
+                <a href="base__colors.html" class="dropdown-nav__link">Colors</a>
+              </li>
+              <li class="dropdown-nav__item">
+                <a href="base__fonts.html" class="dropdown-nav__link">Fonts</a>
+              </li>
+              <li class="dropdown-nav__item">
+                <a href="base__typography.html" class="dropdown-nav__link">Typography</a>
+              </li>
+              <li class="dropdown-nav__item">
+                <a href="base__icons.html" class="dropdown-nav__link dropdown-nav__link--current">Icons</a>
+              </li>
+            </ul>
+          </li>
+          <li class="main-nav__item main-nav__item--dropdown">
+            <a href="#!" class="main-nav__link main-nav__link--dropdown">Modules</a>
+            <ul class="dropdown-nav__list">
+              <li class="dropdown-nav__item">
+                <a href="#" class="dropdown-nav__link">Alerts</a>
+              </li>
+              <li class="dropdown-nav__item">
+                <a href="#" class="dropdown-nav__link">Aside</a>
+              </li>
+              <li class="dropdown-nav__item">
+                <a href="#" class="dropdown-nav__link">Badges</a>
+              </li>
+              <li class="dropdown-nav__item">
+                <a href="#" class="dropdown-nav__link">Buttons</a>
+              </li>
+              <li class="dropdown-nav__item">
+                <a href="#" class="dropdown-nav__link">Date/Time Picker</a>
+              </li>
+              <li class="dropdown-nav__item">
+                <a href="#" class="dropdown-nav__link">Footers</a>
+              </li>
+              <li class="dropdown-nav__item">
+                <a href="#" class="dropdown-nav__link">Forms</a>
+              </li>
+              <li class="dropdown-nav__item">
+                <a href="#" class="dropdown-nav__link">Navigations</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="main-nav__list main-nav__list--secondary">
+          <li class="main-nav__item">
+            <a href="#!" class="main-nav__link"><span class="main-nav__icon icon-info-sign"></span> About</a>
+          </li>
+        </ul>
+      </nav>
+
+      <header class="main-nav__drawer-knob-container main-nav__drawer-knob-container--page-header">
+        <a href="#!" class="main-nav__drawer-knob main-nav__drawer-knob--page-header"></a>
+        <div class="page-header__wrapper">
+          <h1 class="page-header__h1">Icons</h1>
+          <p class="page-header__description">We use Icomoon font to display icons.</p>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="blocks blocks--multi-columns">
+          <div class="icon-block__description">
+            <h2>ICON FONT</h2>
+
+            <p>With an icon font, we can:</p>
+            <ul>
+              <li>Scale easily</li>
+              <li>Change color easily in CSS and on the fly (:hover, :active, etc.)</li>
+              <li>Include shadows easily</li>
+              <li>Have smaller file sizes</li>
+              <li>Have fewer files to download</li>
+              <li>Support HDPI (Retina) screens with no extra effort</li>
+            </ul>
+            <p><a class="link" href="https://icomoon.io/app/#/select" target="blank">IcoMoon</a> allows us to make a custom icon font to keep the font small (only including the icons we'll actually use) and allow us to use icons from multiple free and paid font icon collections in one file.</p>
+
+            <h2 class="icon-block__h2">USING WITH ICON CLASSES</h2>
+
+            <p>Icon classes can be applied to any element and will make use of the <code>::before</code> pseudo-class. It's usually easiest to insert icons with an empty <code>&lt;span&gt;</code> element. Twitter Bootstrap's convention is to use an <code>&lt;i&gt;</code> tag, but that will fail WCAG Level AA accessibility tests, even though <code>&lt;i&gt;</code> has perfectly acceptable usage (as an icon is not one of them).</p>
+
+<pre><code>&lt;span class="icon-home"&gt;&lt;/span&gt;</code></pre>
+
+            <p>Produce: <span class="icon-home"></span></p>
+
+            <h2 class="icon-block__h2">USING WITH SASS VARIABLES</h2>
+
+            <p>The Sass variable method is great to gain greater control over an icon's styling, to use more than one icon on an element, or to use <code>::after</code> instead of <code>::before</code>.</p>
+
+<pre><code>.pagination-link--last:after {
+  font-family: $icon-font;
+  content: " " + $icon-chevron-left + $icon-chevron-left;
+}</code></pre>
+
+<pre><code>&lt;a class="pagination-link pagination-link--last" href="#"&gt;Last&lt;/a&gt;</code></pre>
+
+            <p>Produce: <a class="link pagination-link pagination-link--last" href="#">Last</a></p>
+          </div>
+
+          <div class="icon-block__icon-list">
+            <h2>ICON LIST</h2>
+            <table class="icon-block__table">
+              <thead>
+                <tr>
+                  <th class="icon-block__th-icon">Icon</th>
+                  <th class="icon-block__th-icon-class">Class</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-expand"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-expand</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-switch"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-switch</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-pill"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-pill</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-home"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-home</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-inbox"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-inbox</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-calendar"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-calendar</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-credit"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-credit</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-question-sign"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-question-sign</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-stethoscope"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-stethoscope</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-star-empty"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-star-empty</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-star"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-star</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-drawer"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-drawer</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-plus"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-plus</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-minus"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-minus</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-reorder"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-reorder</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-ok"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-ok</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-exclamation-sign"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-exclamation-sign</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-remove"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-remove</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-sort-up"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-sort-up</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-sort-down"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-sort-down</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-sort"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-sort</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-move"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-move</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-signout"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-signout</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-warning-sign"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-warning-sign</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-remove-sign"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-remove-sign</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-info-sign"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-info-sign</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-check"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-check</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-ok-sign"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-ok-sign</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-ok-circle"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-ok-circle</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-check-empty"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-check-empty</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-filter"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-filter</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-arrow-right"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-arrow-right</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-chevron-right"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-chevron-right</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-chevron-left"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-chevron-left</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-arrow-left"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-arrow-left</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-search"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-search</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-paper-clip"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-paper-clip</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-tea"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-tea</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-bandage"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-bandage</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-email"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-email</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-reply"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-reply</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-forward"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-forward</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-allergies"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-allergies</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-address-book"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-address-book</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-cog"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-cog</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-syringe"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-syringe</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-bar-chart"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-bar-chart</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-hospital"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-hospital</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-th"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-th</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-external-link"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-external-link</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-layers"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-layers</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-desktop"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-desktop</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-tablet"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-tablet</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-fontwidth"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-fontwidth</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-th-list"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-th-list</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-user"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-user</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-user-md"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-user-md</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-group"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-group</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-download"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-download</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-medkit"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-medkit</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-caret-down"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-caret-down</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-caret-up"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-caret-up</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-caret-left"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-caret-left</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-caret-right"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-caret-right</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-heart"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-heart</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-h-sign"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-h-sign</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-plus-sign"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-plus-sign</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-pencil"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-pencil</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-edit"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-edit</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-eye-open"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-eye-open</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-print"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-print</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-envelope"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-envelope</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-comment"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-comment</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-chat"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-chat</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-dollar-sign"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-dollar-sign</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-clip-board"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-clip-board</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-file"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-file</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-circle-blank"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-circle-blank</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-circle"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-circle</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-barcode"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-barcode</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-ellipsis"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-ellipsis</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-double-angle-right"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-double-angle-right</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-angle-right"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-angle-right</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-angle-left"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-angle-left</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-double-angle-left"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-double-angle-left</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-blocked"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-blocked</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-angle-up"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-angle-up</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-angle-down"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-angle-down</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-chevron-down"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-chevron-down</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-arrow-down"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-arrow-down</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-double-angle-down"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-double-angle-down</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-arrow-up"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-arrow-up</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-double-angle-up"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-double-angle-up</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-chevron-up"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-chevron-up</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-lock"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-lock</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-shopping-cart"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-shopping-cart</td>
+                </tr>
+                <tr>
+                  <td class="icon-block__td-icon"><span class="icon-flow-branch"></span></td>
+                  <td class="icon-block__td-icon-class">.icon-flow-branch</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </main>
+    </div>
+  </body>
+
+</html>

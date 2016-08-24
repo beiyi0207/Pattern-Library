@@ -1,0 +1,54 @@
+.typography-block {
+  display: flex;
+  margin-bottom: 1rem;
+}
+.typography-block__summary {
+  width: 6rem;
+  margin-left: 5px;
+}
+.typography-block__example {
+  width: 80%;
+}
+.typography-block__h1 {
+  line-height: 1.25;
+  font-size: 1.6em;
+  font-family: 'proxima-nova-bold';
+}
+.typography-block__h2 {
+  font-size: 1.2em;
+  text-transform: uppercase;
+  color: #687279;
+  font-family: 'proxima-nova-bold';
+}
+.typography-block__h3 {
+  font-family: 'proxima-nova-bold';
+  line-height: 1.25;
+}
+.typography-block__p {
+  font-family: 'proxima-nova-light';
+  line-height: 1.25;
+}
+.typography-block__a,
+.typography-block__a:link,
+.typography-block__a:visited {
+  font-family: 'proxima-nova-light';
+  color: #007da9;
+}
+.typography-block__a:hover {
+  color: #00baf2;
+}
+.typography__container--dark-theme {
+  background: #454b50;
+  padding: 0.5rem 0;
+}
+.typography-block--dark-theme {
+  margin: 0;
+}
+.typography-block__a--dark-theme,
+.typography-block__a--dark-theme:link,
+.typography-block__a--dark-theme:visited {
+  color: #91d1e3;
+}
+.typography-block__a--dark-theme:hover {
+  color: #00baf2;
+}

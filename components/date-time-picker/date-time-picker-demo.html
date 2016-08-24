@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/legacy.js"></script>
+    <script type="text/javascript" src="js/picker.js"></script>
+    <script type="text/javascript" src="js/picker.date.js"></script>
+    <script type="text/javascript" src="js/picker.time.js"></script>
+    <script type="text/javascript" src="js/date-time-picker-demo.js"></script>
+
+    <link href="css/classic.css" rel="stylesheet">
+    <link href="css/classic.date.css" rel="stylesheet">
+    <link href="css/classic.time.css" rel="stylesheet">
+    <link href="css/date-time-picker-demo.css" rel="stylesheet">
+    <link href="css/icons.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <main class="blocks">
+      <h1>Date/Time Range Picker Demo</h1>
+      <p>We use Pickadate.js for our Date/Time Range Picker. For API details, see <a target="blank" href="http://amsul.ca/pickadate.js/api/">Pickadate.js API</a>.</p>
+
+      <form class="datepicker__container">
+        <div class="form__row">
+          <div class="form__group">
+            <label class="form__label" for="datepicker__start-date">Start Date</label>
+            <input id="datepicker__start-date" name="datepicker__start-date" type="text" class="form__input form__input--date-picker datepicker__input" aria-haspopup="true" aria-expanded="false" aria-readonly="false" aria-owns="datepicker__start-date_root" placeholder="mm/dd/yyyy"><span class="picker__input-icon icon-calendar" id="datepicker__start-icon"></span>
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="timepicker__start-time">Start Time</label>
+            <input id="timepicker__start-time" name="timepicker__start-time" type="text" readonly="" class="form__input form__input--date-picker timepicker__input" aria-haspopup="true" aria-expanded="false" aria-readonly="false" aria-owns="datepicker__start-time_root" placeholder="0000"><span class="picker__input-icon icon-clock" id="timepicker__start-icon"></span>
+          </div>
+        </div>
+        <div class="form__row">
+          <div class="form__group">
+            <label class="form__label" for="datepicker__end-date">End Date</label>
+            <input id="datepicker__end-date" name="datepicker__end-date" type="text" class="form__input form__input--date-picker datepicker__input" aria-haspopup="true" aria-expanded="false" aria-readonly="false" aria-owns="datepicker__end-date_root" placeholder="mm/dd/yyyy"><span class="picker__input-icon icon-calendar" id="datepicker__end-icon"></span>
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="timepicker__end-time">End Time</label>
+            <input id="timepicker__end-time" name="timepicker__end-time" type="text" readonly="" class="form__input form__input--date-picker timepicker__input" aria-haspopup="true" aria-expanded="false" aria-readonly="false" aria-owns="datepicker__end-time_root" placeholder="2359"><span class="picker__input-icon icon-clock" id="timepicker__end-icon"></span>
+          </div>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

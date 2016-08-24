@@ -1,0 +1,159 @@
+.color-block__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.color-block {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  font-family: 'proxima-nova-light';
+}
+
+.color-block--dropdown-background {
+  background: #2d3135;
+  color: #fff;
+}
+
+.color-block--main-nav-background {
+  background: #454b50;
+  color: #fff;
+}
+
+.color-block--h2-color {
+  background: #687279;
+  color: #fff;
+}
+
+.color-block--aside-background {
+  background: #f3f3f3;
+}
+
+.color-block--well-background {
+  background: #f2f1f0;
+}
+
+.color-block--body-background {
+  background: #fbfbfb;
+}
+
+.color-block--default-border {
+  background: #dadee0;
+}
+
+/* Button colors */
+.color-block--primary-button-font {
+  background: #fff;
+}
+
+.color-block--primary-button {
+  background: #0090bf;
+  color: #000;
+}
+
+.color-block--primary-button-hover {
+  background: #00baf2;
+  color: #000;
+}
+
+.color-block--primary-button-border-bottom {
+  background: #006b8c;
+  color: #fff;
+}
+
+.color-block--default-button-font {
+  background: #0a5679;
+  color: #fff;
+}
+
+.color-block--default-button {
+  background: #e4e7ea;
+}
+
+.color-block--default-button-hover {
+  background: #f2f4f5;
+}
+
+.color-block--default-button-border-bottom {
+  background: #aab5be;
+  color: #000;
+}
+
+/* Link colors */
+.color-block--link-default {
+  background: #007da9;
+  color: #fff;
+}
+
+.color-block--link-dark-theme{
+  background: #91d1e3;
+  color: #000;
+}
+
+.color-block--link-hover {
+  background: #00baf2;
+  color: #000;
+}
+
+/* Alert colors */
+.color-block--alert-default-font {
+  background: #005875;
+  color: #fff;
+}
+
+.color-block--alert-default-border {
+  background: #91d1e3;
+  color: #000;
+}
+
+.color-block--alert-default-background {
+  background: #e6f5f9;
+}
+
+.color-block--alert-success-font {
+  background: #467928;
+  color: #fff;
+}
+
+.color-block--alert-success-border {
+  background: #c4dcb1;
+  color: #000;
+}
+
+.color-block--alert-success-background {
+  background: #fcfdfb;
+}
+
+.color-block--alert-error-font {
+  background: #bc3e28;
+  color: #fff;
+}
+
+.color-block--alert-error-border {
+  background: #e1c8b9;
+  color: #000;
+}
+
+.color-block--alert-error-background {
+  background: #fff;
+}
+
+.color-block--warning-background {
+  background: #ffb;
+}
+
+
+@media screen and (min-width: 1024px) {
+  .color-block__container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .color-block {
+    width: 100px;
+    height: 150px;
+  }
+}

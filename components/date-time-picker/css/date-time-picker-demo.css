@@ -1,0 +1,138 @@
+@font-face {
+  font-family: proxima-nova;
+  src: url(../fonts/ProximaNova-Reg-webfont.woff);
+}
+@font-face {
+  font-family: proxima-nova-bold;
+  src: url(../fonts/ProximaNova-Bold-webfont.woff);
+}
+@font-face {
+  font-family: proxima-nova-light;
+  src: url(../fonts/ProximaNova-Light-webfont.woff);
+}
+@font-face {
+  font-family: icomoon;
+  src: url(../fonts/icomoon.woff);
+}
+
+@font-face {
+  font-family: icomoon-additional;
+  src: url(../fonts/additional-icons.woff);
+}
+
+/* Font */
+h1 {
+  font-family: 'proxima-nova-bold';
+  font-weight: lighter;
+  line-height: 3
+}
+
+h2 {
+  font-family: HelveticaNeue, Helvetica, arial, verdana, sans-serif;
+  font-weight: 700;
+}
+
+h3, strong, dt, th {
+  font-family: 'proxima-nova-bold';
+  font-weight: lighter;
+}
+
+p, input {
+  font-family: 'proxima-nova-light';
+}
+
+label {
+  font-family: 'proxima-nova';
+}
+
+/* Typography */
+
+body {
+  color: #454b50;
+}
+
+h1 {
+  line-height: 1.25;
+  font-size: 1.6em;
+}
+
+h2 {
+  font-size: 1.2em;
+  text-transform: uppercase;
+  color: #687279;
+}
+
+h3 {
+  line-height: 1.25;
+}
+
+code {
+  color: #53901f;
+}
+
+a, a:hover, a:link, a:visited {
+  text-decoration: none;
+  color: #0090bf;
+}
+
+/* Additional Icons */
+.icon-clock, .icon-bin {
+  font-family: 'icomoon-additional';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+.icon-clock:before {
+  content: "\e901"; }
+
+.icon-bin:before {
+  content: "\e900"; }
+
+/* Layout */
+.blocks {
+  margin: 2rem 1rem 3rem 1rem;
+}
+
+.form__row {
+  display: flex;
+  width: 100%;
+}
+
+.form__group {
+  padding: 0 1rem;
+  margin-right: 1rem;
+}
+
+.form__label, .form__input {
+  display: block;
+}
+
+.form__label {
+  margin-bottom: 5px;
+  padding-left: 0.5rem;
+}
+
+.form__input--date-picker {
+  height: 2rem;
+  width: 15rem;
+  font-size: 1rem;
+  padding-left: 0.5rem;
+}
+
+.picker__input-icon {
+  position: relative;
+  top: -1.5rem;
+  left: 13.5rem;
+  color: #687279;
+}
+
+/* Change font of the date/time picker popup */
+.picker {
+  font-family: 'proxima-nova-light';
+}
+

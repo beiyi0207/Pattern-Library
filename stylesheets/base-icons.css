@@ -1,0 +1,71 @@
+.icon-block__h2 {
+  padding-top: 1rem;
+}
+
+.icon-block__description {
+  margin-bottom: 4rem;
+}
+
+.icon-block__icon-list {
+  width: 95%;
+  max-width: 500px;
+  font-size: 1rem;
+}
+
+.icon-block__table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 0;
+}
+
+.icon-block__table tr:nth-child(even) {
+  background: #f2f1f0;
+}
+
+.icon-block__th-icon {
+  text-align: center;
+}
+
+.icon-block__th-icon-class {
+  text-indent: 1em;
+}
+
+.icon-block__td-icon {
+  width: 6rem;
+  height: 2.5rem;
+  font-size: 1.1em;
+  padding: 1ex;
+  text-align: center;
+}
+
+.icon-block__td-icon-class {
+  font-size: 1.1em;
+  padding: 1ex;
+}
+
+.pagination-link {
+  display: inline-block;
+  padding: 1ex 1em;
+  border: solid 1px rgba(0, 144, 191, 0.2);
+  border-radius: 1px;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.pagination-link--last:after {
+  font-family: 'icomoon';
+  content: " \f105\f105";
+}
+
+@media screen and (min-width: 1024px) {
+  .blocks--multi-columns {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .icon-block__description {
+    margin-right: 2rem;
+    width: calc(95% - 500px);
+  }
+}

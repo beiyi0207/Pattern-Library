@@ -1,0 +1,194 @@
+<html>
+  <head>
+    <link href="stylesheets/_icons.css" rel="stylesheet">
+    <link href="stylesheets/_typography.css" rel="stylesheet">
+    <link href="stylesheets/_layout.css" rel="stylesheet">
+    <link href="stylesheets/_nav.css" rel="stylesheet">
+    <link href="stylesheets/base-colors.css" rel="stylesheet">
+
+    <script src="js/jquery.js"></script>
+    <script src="js/nav.js"></script>
+  </head>
+
+  <body>
+    <div class="app-container">
+      <nav class="main-nav">
+        <ul class="main-nav__list">
+          <li class="main-nav__item">
+            <a href="#!" class="main-nav__link"><span class="main-nav__icon icon-home"></span> Home</a>
+          </li>
+          <li class="main-nav__item main-nav__item--dropdown">
+            <a href="#!" class="main-nav__link main-nav__link--dropdown">Base</a>
+            <ul class="dropdown-nav__list">
+              <li class="dropdown-nav__item">
+                <a href="base__colors.html" class="dropdown-nav__link dropdown-nav__link--current">Colors</a>
+              </li>
+              <li class="dropdown-nav__item">
+                <a href="base__fonts.html" class="dropdown-nav__link">Fonts</a>
+              </li>
+              <li class="dropdown-nav__item">
+                <a href="base__typography.html" class="dropdown-nav__link">Typography</a>
+              </li>
+              <li class="dropdown-nav__item">
+                <a href="base__icons.html" class="dropdown-nav__link">Icons</a>
+              </li>
+            </ul>
+          </li>
+          <li class="main-nav__item main-nav__item--dropdown">
+            <a href="#!" class="main-nav__link main-nav__link--dropdown">Modules</a>
+            <ul class="dropdown-nav__list">
+              <li class="dropdown-nav__item">
+                <a href="#" class="dropdown-nav__link">Alerts</a>
+              </li>
+              <li class="dropdown-nav__item">
+                <a href="#" class="dropdown-nav__link">Aside</a>
+              </li>
+              <li class="dropdown-nav__item">
+                <a href="#" class="dropdown-nav__link">Badges</a>
+              </li>
+              <li class="dropdown-nav__item">
+                <a href="#" class="dropdown-nav__link">Buttons</a>
+              </li>
+              <li class="dropdown-nav__item">
+                <a href="#" class="dropdown-nav__link">Date/Time Picker</a>
+              </li>
+              <li class="dropdown-nav__item">
+                <a href="#" class="dropdown-nav__link">Footers</a>
+              </li>
+              <li class="dropdown-nav__item">
+                <a href="#" class="dropdown-nav__link">Forms</a>
+              </li>
+              <li class="dropdown-nav__item">
+                <a href="#" class="dropdown-nav__link">Navigations</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="main-nav__list main-nav__list--secondary">
+          <li class="main-nav__item">
+            <a href="#!" class="main-nav__link"><span class="main-nav__icon icon-info-sign"></span> About</a>
+          </li>
+        </ul>
+      </nav>
+
+      <header class="main-nav__drawer-knob-container main-nav__drawer-knob-container--page-header">
+        <a href="#!" class="main-nav__drawer-knob main-nav__drawer-knob--page-header"></a>
+        <div class="page-header__wrapper">
+          <h1 class="page-header__h1">Colors</h1>
+          <p class="page-header__description">Default color palette</p>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="blocks">
+          <h2>Base Colors</h2>
+          <section class="color-block__container">
+            <div class="color-block color-block--dropdown-background">
+              <p>#2d3135;</p>
+            </div>
+      	    <div class="color-block color-block--main-nav-background">
+      	      <p>#454b50;</p>
+      	    </div>
+            <div class="color-block color-block--h2-color">
+              <p>#687279;</p>
+            </div>
+      	    <div class="color-block color-block--well-background">
+      	      <p>#f2f1f0;</p>
+      	    </div>
+      	    <div class="color-block color-block--aside-background">
+      	      <p>#f3f3f3;</p>
+      	    </div>
+      	    <div class="color-block color-block--body-background">
+      	      <p>#fbfbfb;</p>
+      	    </div>
+      	    <div class="color-block color-block--default-border">
+      	      <p>#dadee0;</p>
+      	    </div>
+      	  </section>
+        </section>
+
+        <section class="blocks">
+          <h2>Button Colors</h2>
+          <section class="color-block__container">
+            <div class="color-block color-block--primary-button-font">
+              <p>#fff;</p>
+            </div>
+            <div class="color-block color-block--primary-button">
+              <p>#0090bf;</p>
+            </div>
+            <div class="color-block color-block--primary-button-hover">
+              <p>#00baf2;</p>
+            </div>
+            <div class="color-block color-block--primary-button-border-bottom">
+              <p>#006b8c;</p>
+            </div>
+            <div class="color-block color-block--default-button-font">
+              <p>#0a5679;</p>
+            </div>
+            <div class="color-block color-block--default-button">
+              <p>#e4e7ea;</p>
+            </div>
+            <div class="color-block color-block--default-button-hover">
+              <p>#f2f4f5;</p>
+            </div>
+            <div class="color-block color-block--default-button-border-bottom">
+              <p>#aab5be;</p>
+            </div>
+          </section>
+        </section>
+
+        <section class="blocks">
+          <h2>Link Colors</h2>
+          <section class="color-block__container">
+            <div class="color-block color-block--link-default">
+              <p>#007da9;</p>
+            </div>
+            <div class="color-block color-block--link-dark-theme">
+              <p>#91d1e3;</p>
+            </div>
+            <div class="color-block color-block--link-hover">
+              <p>#00baf2;</p>
+            </div>
+          </section>
+        </section>
+
+        <section class="blocks">
+          <h2>Alerts Colors</h2>
+          <section class="color-block__container">
+            <div class="color-block color-block--alert-default-font">
+              <p>#005875;</p>
+            </div>
+            <div class="color-block color-block--alert-default-border">
+              <p>#91d1e3;</p>
+            </div>
+            <div class="color-block color-block--alert-default-background">
+              <p>#e6f5f9;</p>
+            </div>
+            <div class="color-block color-block--alert-success-font">
+              <p>#467928;</p>
+            </div>
+            <div class="color-block color-block--alert-success-border">
+              <p>#c4dcb1;</p>
+            </div>
+            <div class="color-block color-block--alert-success-background">
+              <p>#fcfdfb;</p>
+            </div>
+            <div class="color-block color-block--alert-error-font">
+              <p>#bc3e28;</p>
+            </div>
+            <div class="color-block color-block--alert-error-border">
+              <p>#e1c8b9;</p>
+            </div>
+            <div class="color-block color-block--alert-error-background">
+              <p>#fff;</p>
+            </div>
+            <div class="color-block color-block--warning-background">
+              <p>#ffb;</p>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+  </body>
+
+</html>
