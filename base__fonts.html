@@ -1,5 +1,7 @@
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link href="stylesheets/_icons.css" rel="stylesheet">
     <link href="stylesheets/_typography.css" rel="stylesheet">
     <link href="stylesheets/_layout.css" rel="stylesheet">
@@ -12,6 +14,14 @@
 
   <body>
     <div class="app-container">
+      <header class="page-header">
+        <button type="button" class="main-nav__mobile-toggle main-nav__mobile-toggle--page-header" aria-haspopup="true" aria-owns="main-nav" aria-expanded="false" aria-hidden="true"></button>
+        <div class="page-header__wrapper">
+          <h1 class="page-header__h1">Fonts</h1>
+          <p class="page-header__description">May the Responsiveness and Accessibility be with you...</p>
+        </div>
+      </header>
+
       <nav class="main-nav">
         <ul class="main-nav__list">
           <li class="main-nav__item">
@@ -70,14 +80,6 @@
           </li>
         </ul>
       </nav>
-
-      <header class="main-nav__drawer-knob-container main-nav__drawer-knob-container--page-header">
-        <a href="#!" class="main-nav__drawer-knob main-nav__drawer-knob--page-header"></a>
-        <div class="page-header__wrapper">
-          <h1 class="page-header__h1">Fonts</h1>
-          <p class="page-header__description">Make sure you have the following fonts in your fonts folder.</p>
-        </div>
-      </header>
 
       <main class="main">
         <section class="blocks">

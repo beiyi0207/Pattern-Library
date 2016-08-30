@@ -1,10 +1,26 @@
  $(document).ready(function(){
-  $('.main-nav__drawer-knob, .main-nav__item--dropdown .main-nav__link').click(function(event) {
+  // Skiplinks
+  $('.skiplinks').focusin(function() {
+    $(this).addClass('skiplinks--focused');
+  })
+
+  $('.skiplinks').focusout(function() {
+    $(this).removeClass('skiplinks--focused');
+  })
+
+
+
+
+
+
+
+
+  $('.main-nav__mobile-toggle, .main-nav__item--dropdown .main-nav__link').click(function(event) {
     event.preventDefault();
   })
 
   // Show/Hide Main Navigation as a drawer.
-	$('.main-nav__drawer-knob').each(function() {
+	$('.main-nav__mobile-toggle').each(function() {
 		$(this).click(function() {
 			$(this).parents('.app-container').toggleClass('app-container--drawer-open');
 

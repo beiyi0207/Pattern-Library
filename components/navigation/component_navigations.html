@@ -1,0 +1,233 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../../stylesheets/_typography.css" rel="stylesheet">
+    <link href="../../stylesheets/_icons.css" rel="stylesheet">
+    <link href="../../stylesheets/_nav.css" rel="stylesheet">
+    <link href="../../stylesheets/_layout.css" rel="stylesheet">
+
+    <script src="../../js/jquery.js"></script>
+    <script src="../../js/nav.js"></script>
+  </head>
+  <body>
+    <ul class="skiplinks" id="skiplinks">
+      <li class="skiplinks__item"><a href="#main" class="link">To Content</a></li>
+      <li class="skiplinks__item"><a href="#main-nav" class="link">To Main Menu</a></li>
+      <li class="skiplinks__item"><a href="#footer" class="link">To Footer</a></li>
+    </ul>
+
+    <div class="app-container">
+      <header class="page-header">
+        <button type="button" class="main-nav__mobile-toggle main-nav__mobile-toggle--page-header" aria-haspopup="true" aria-owns="main-nav" aria-expanded="false" aria-hidden="true"></button>
+        <div class="page-header__wrapper">
+          <h1 class="page-header__h1">Navigation</h1>
+          <p class="page-header__description">May the Responsiveness and Accessibility be with you...</p>
+        </div>
+      </header>
+
+      <nav class="main-nav">
+        <ul class="main-nav__list">
+          <li class="main-nav__item">
+            <a href="#!" class="main-nav__link"><span class="main-nav__icon icon-home"></span> Home</a>
+          </li>
+          <li class="main-nav__item main-nav__item--dropdown">
+            <a href="#!" class="main-nav__link main-nav__link--dropdown">Base</a>
+            <ul class="dropdown-nav__list">
+              <li class="dropdown-nav__item">
+                <a href="base__colors.html" class="dropdown-nav__link">Colors</a>
+              </li>
+              <li class="dropdown-nav__item">
+                <a href="base__fonts.html" class="dropdown-nav__link">Fonts</a>
+              </li>
+              <li class="dropdown-nav__item">
+                <a href="base__typography.html" class="dropdown-nav__link">Typography</a>
+              </li>
+              <li class="dropdown-nav__item">
+                <a href="base__icons.html" class="dropdown-nav__link">Icons</a>
+              </li>
+            </ul>
+          </li>
+          <li class="main-nav__item main-nav__item--dropdown">
+            <a href="#!" class="main-nav__link main-nav__link--dropdown">Components</a>
+            <ul class="dropdown-nav__list">
+              <li class="dropdown-nav__item">
+                <a href="#" class="dropdown-nav__link">Alerts</a>
+              </li>
+              <li class="dropdown-nav__item">
+                <a href="#" class="dropdown-nav__link">Aside</a>
+              </li>
+              <li class="dropdown-nav__item">
+                <a href="#" class="dropdown-nav__link">Badges</a>
+              </li>
+              <li class="dropdown-nav__item">
+                <a href="#" class="dropdown-nav__link">Buttons</a>
+              </li>
+              <li class="dropdown-nav__item">
+                <a href="#" class="dropdown-nav__link">Date/Time Picker</a>
+              </li>
+              <li class="dropdown-nav__item">
+                <a href="#" class="dropdown-nav__link">Footers</a>
+              </li>
+              <li class="dropdown-nav__item">
+                <a href="#" class="dropdown-nav__link">Forms</a>
+              </li>
+              <li class="dropdown-nav__item">
+                <a href="component_navigations.html" class="dropdown-nav__link dropdown-nav__link--current">Navigations</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="main-nav__list main-nav__list--secondary">
+          <li class="main-nav__item">
+            <a href="#!" class="main-nav__link"><span class="main-nav__icon icon-info-sign"></span> About</a>
+          </li>
+        </ul>
+      </nav>
+
+      <main class="main" id="main">
+        <section class="blocks">
+          <h2>Responsiveness</h2>
+          <ul>
+            <li><a href="#section-mobile-first" class="link">Responsive</a></li>
+            <li><a href="#section-touch-notouch" class="link">Touch Device Capable</a></li>
+          </ul>
+
+          <h3 id="section-mobile-first">Responsive</h3>
+          <ul>
+            <li>Demonstrate the Navigation looks good on any mobile, tablet, or desktop screens, in both Portrait and Landscape modes.</li>
+            <li>Demonstrate the Navigation works as expected on any mobile, tablet, or desktop screens, in both Portrait and Landscape modes.</li>
+          </ul>
+
+          <h4>Setting the Viewport</h4>
+
+          <p>HTML5 introduced a method to let web designers take control over the viewport, through the <code>&lt;meta&gt;</code> tag.</p>
+
+          <p>A <code>&lt;meta&gt;</code> viewport element gives the browser instructions on how to control the page's dimensions and scaling. The <code>width=device-width</code> part sets the width of the page to follow the screen-width of the device (which will vary depending on the device). The <code>initial-scale=1.0</code> part sets the initial zoom level when the page is first loaded by the browser.</p>
+
+          <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+
+          <ul>
+            <li>Make sure you include the above <code>&lt;meta&gt;</code> viewport element in your web application.</li>
+          </ul>
+
+          <h4>Mobile First</h4>
+
+          <p>The default style of the Navigation is for screens smaller than 1024px. Styles for screens larger than 1024px is defined in the media query.</p>
+
+          <pre><code>@media screen and (min-width: 1024px) { ... }</code></pre>
+
+          <div class="block__figure-group" role="group">
+            <figure class="block__figure">
+              <img src="img/styleguide_navigation_default.PNG" alt="screenshot of default main navigation (drawer closed)" />
+              <figcaption>Screenshot: Default main navigation (closed)</figcaption>
+            </figure>
+
+            <figure class="block__figure">
+              <img src="img/styleguide_navigation_default--drawer-open.PNG" alt="screenshot of default main navigation (drawer open)" />
+              <figcaption>Screenshot: Default main navigation (open)</figcaption>
+            </figure>
+
+            <figure class="block__figure">
+              <img src="img/styleguide_navigation_large-screen.PNG" alt="screenshot of main navigation on large screens" />
+              <figcaption>Screenshot: Main navigation on large screens</figcaption>
+            </figure>
+          </div>
+
+        </section>
+        <section class="blocks">
+          <h2>Accessibility</h2>
+          <ul>
+            <li><a href="#section-skiplinks" class="link">Skiplinks</a></li>
+            <li><a href="#section-aria" class="link">WAI-ARIA</a></li>
+            <li>Keyboard Support</li>
+          </ul>
+
+          <h3 id="section-skiplinks">Skiplinks</h3>
+          <ul>
+            <li>Demonstrate there are Skiplinks available to keyboard users.</li>
+            <li>Demonstrate Skiplinks are only visible when receive focus.</li>
+          </ul>
+
+          <p>The main content is not usually the first thing on a web page. Keyboard and screen reader users generally must navigate a long list of navigation links, sub-lists of links, corporate icons, site searches, and other elements before ever arriving at the main content. This is particularly difficult for users with some forms of motor disabilities.</p>
+
+          <p>The idea of creating "Skip Navigation" links is simple enough: provide a link at the top of the page which jumps the user down to an anchor or target at the beginning of the main content. To learn more about the guidelines of creating Skiplinks, read <a href="http://webaim.org/techniques/skipnav/" class="link">"Skip Navigation" Links</a> on WebAIM.</p>
+
+          <p>In our design, skiplinks are hidden from visible users by setting the position to <code>left: -9999px</code> and displayed when they receive focus.</p>
+
+          <div class="block__figure-group" role="group">
+            <figure class="block__figure">
+              <img src="img/styleguide_navigation_default.PNG" alt="screenshot of skiplinks when they don't have focus" />
+              <figcaption>Screenshot: Skiplinks without focus</figcaption>
+            </figure>
+
+            <figure class="block__figure">
+              <img src="img/styleguide_navigation_skiplinks-focusin.PNG" alt="screenshot of skiplinks when receive focus" />
+              <figcaption>Screenshot: Skiplinks when receive focus</figcaption>
+            </figure>
+          </div>
+
+          <pre>
+<code>&lt;body&gt;
+  &lt;ul class="skiplinks" id="skiplinks"&gt;
+    &lt;li class="skiplinks__item"&gt;
+      &lt;a href="#main" class="link"&gt;To Content&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="skiplinks__item"&gt;
+      &lt;a href="#main-nav" class="link"&gt;To Main Menu&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="skiplinks__item"&gt;
+      &lt;a href="#footer" class="link"&gt;To Footer&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  ...</code>
+</pre>
+          <ul>
+            <li>Make sure <code>#skiplinks</code> is the first element in <code>&lt;body&gt;</code>.</li>
+            <li>In JavaScript, add class <code>.skiplinks--focused</code> to <code>#skiplinks</code> when it receives focus, and remove class <code>.skiplinks--focused</code> when <code>#skiplinks</code> and its children no longer receive focus.</li>
+          </ul>
+
+
+          <h3 id="section-aria">WAI-ARIA</h3>
+          <ul>
+            <li>Demonstrate appropriate ARIA states and properties are used to provide information that cannot be reflected by the HTML tag or structure itself.</li>
+            <li>Demonstrate the value of ARIA states are changed accordingly.</li>
+          </ul>
+
+          <p>WAI-ARIA stands for <a href="http://www.w3.org/blog/2014/03/wai-aria-expands-web-accessibility/" class="link">"Web Accessibility Initiative - Accessible Rich Internet Applications"</a>. It is a set of attributes to help enhance the semantics of a web site or web application to help assistive technologies, such as screen readers for the blind, make sense of certain things that are not native to HTML. </p>
+
+          <p>One corner stone of WAI-ARIA is the <a href="http://www.w3.org/TR/wai-aria/roles" class="link">role attribute</a>. Since we are using HTML5, we use equivalent HTML5 elements whenever possible, but there might still be cases when we need to indicate the role of an element using WAI-ARIA roles.</p>
+
+          <p>The second corner stone are WAI-ARIA <a href="http://www.w3.org/TR/wai-aria/states_and_properties" class="link">states and properties</a>. They provide additional information that is not reflected in the markup itself. WAI-ARIA states are often dynamic and change their values throughout the lifecycle of a web application, and are usually manipulated via JavaScript.</p>
+
+          <p><a href="https://www.marcozehe.de/2014/03/27/what-is-wai-aria-what-does-it-do-for-me-and-what-not/" class="link">What is WAI-ARIA, what does it do for me, and what not?</a> is a good article to help understand WAI-ARIA.</p>
+
+          <h4>Mobile Toggle Button</h5>
+
+          <pre><code>&lt;button type="button" class="main-nav__mobile-toggle main-nav__mobile-toggle--page-header" aria-owns="main-nav" aria-hidden="false"&gt;&lt;/button&gt;</code></pre>
+          <ul>
+            <li>Use <code>aria-owns="main-nav"</code> to indicate the relationship between the mobile toggle and the main nav.</li>
+            <li>Use <code>aria-hidden="true/false"</code> to indicate whether the mobile toggle is visible (by default) or hidden (on large screen). Make sure you change its value in JavaScript to match the change in CSS.</li>
+          </ul>
+
+          <h4>Dropdown Menu</h4>
+
+          <pre><code>&lt;a href="#home" class="main-nav__link main-nav__link--dropdown" aria-haspopup="true" aria-expanded="false" aria-owns="dropdown-menu-home"&gt;</code></pre>
+          <ul>
+            <li>Use <code>aria-haspopup="true"</code> to indicate <code>.main-nav__link--dropdown</code> has an element that can be shown/hidden.</li>
+            <li>Use <code>aria-expanded="true/false"</code> to indicate the state of the dropdown menu. Make sure you change its value whenever you change its state in JavaScript.</li>
+            <li>Use <code>aria-owns="[dropdown-menu-id]"</code> to indicate which dropdown menu it owns.</li>
+          </ul>
+
+          <pre><code>&lt;ul id="dropdown-menu-home" class="dropdown-nav__list" aria-hidden="true"&gt;</code></pre>
+          <ul>
+            <li>Make sure it has an id that matches the value of <code>aria-owns</code> of its trigger link.</li>
+            <li>Use <code>aria-hidden="true/false"</code> to indicate whether <code>.dropdown-nav__list</code> is shown or hidden. Make sure you change its value whenever you change its state in JavaScript.</li>
+          </ul>
+        </section>
+      </main>
+
+      <footer></footer>
+    </div>
+  </body>
+</html>
