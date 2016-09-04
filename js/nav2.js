@@ -6,7 +6,6 @@ $(document).ready(function(){
 });
 
 $(window).resize(function(){
-  responsive();
   location.reload();
 });
 
@@ -31,8 +30,8 @@ function _openMainNavDrawer() {
 
   $('.main-nav').show().attr('aria-hidden', false); // Show the main nav in the drawer and change its aria-hidden to false
 
-  // If a dropdown menu has a current link, expand that dropdown menu by default.
-  if ($('.main-nav').has('.dropdown-nav__link--current')) {
+  // In default view, if a dropdown menu has a current link, expand that dropdown menu by default.
+  if ($('.main-nav').has('.dropdown-nav__link--current') && $('.main-nav__mobile-toggle').is(':visible')) {
     var currentDropdownList = $('.dropdown-nav__link--current').parents('.dropdown-nav__list');
     $(currentDropdownList).show().attr('aria-hidden', false); // Show the dropdown menu containing the current link, and set its aria-hidden value to false
     $(currentDropdownList).prev().toggleClass('main-nav__link--dropdown main-nav__link--dropdown-expanded').attr('aria-expanded', true); // Change the icon on the dropdown anchor link to indicate that the dropdown menu is open, and set its aria-expanded value to true
@@ -42,7 +41,7 @@ function _openMainNavDrawer() {
 function _toggleDropdownMenus(target) {
   if ($(target).hasClass('main-nav__link--dropdown')) {
     $(target).removeClass('main-nav__link--dropdown').addClass('main-nav__link--dropdown-expanded').attr('aria-expanded', true);
-    $(target).next().slideDown(200).attr('aria-hidden', false).delay(500).find('.dropdown-nav__item:first .dropdown-nav__link').focus();
+    $(target).next().slideDown(200).attr('aria-hidden', false).delay(500).find('.dropdown-nav__item:first .dropdown-nav__link');
     $('.main-nav__item--dropdown .main-nav__link').not(target).removeClass('main-nav__link--dropdown-expanded').addClass('main-nav__link--dropdown').attr('aria-expanded', false);
     $('.main-nav__item--dropdown .main-nav__link').not(target).next().slideUp(200).attr('aria-hidden', true);
   } else if ($(target).hasClass('main-nav__link--dropdown-expanded')) {
@@ -99,13 +98,50 @@ function skipLinks() {
       $this.parent().prev().find('.skiplinks__link').focus();
     }
 
-      // When the user press Enter on "To Main Menu", open the main-nav drawer and set focus on the first main menu link.
+    // When the user press Enter on "To Main Menu", open the main-nav drawer and set focus on the first main menu link.
     if (e.keyCode == 13 && $this.attr('href') == '#main-nav') {
       if (($('.main-nav__mobile-toggle').is(':visible') && $('.app-container').hasClass('app-container--drawer-open') == false) || $('.main-nav__mobile-toggle').is(':hidden')) {
         _openMainNavDrawer();
         $('#main-nav').find('.main-nav__item').first().find('.main-nav__link:first').focus();
       }
+    } else if (e.keyCode == 13) {
+      var $target = $($(this).attr('href'));
+
+      $target
+        .attr('tabindex', 0)
+        .on('blur focusout', function() {
+          $target.removeAttr('tabindex');
+        })
+        .focus();
+
+      $('.app-container').scrollTo($target, 100);
     }
+  })
+
+  // Skiplinks click support
+  $('.skiplinks__link').each(function() {
+    $(this).click(function(event) {
+      var $this = $(this);
+      $('.skiplinks').addClass('skiplinks--focused');
+
+      if ($this.attr('href') == '#main-nav') {
+        if (($('.main-nav__mobile-toggle').is(':visible') && $('.app-container').hasClass('app-container--drawer-open') == false) || $('.main-nav__mobile-toggle').is(':hidden')) {
+          _openMainNavDrawer();
+          $('#main-nav').find('.main-nav__item').first().find('.main-nav__link:first').focus();
+        }
+      } else {
+        var $target = $($(this).attr('href'));
+
+        $target
+          .attr('tabindex', 0)
+          .on('blur focusout', function() {
+            $target.removeAttr('tabindex');
+          })
+          .focus();
+
+        $('.app-container').scrollTo($target, 100);
+      }
+    })
   })
 }
 
@@ -182,6 +218,12 @@ function mainNavKeyboardSupport() {
         $this.parent().prev().find('.main-nav__link').focus();
       }
 
+      // ESC Key to close the main nav drawer
+      if (e.keyCode == 27 && $('.app-container').hasClass('app-container--drawer-open')) {
+        _closeMainNavDrawer();
+        $('.main-nav__mobile-toggle').focus();
+      }
+
 
     // Larger Screen (screen width >= 1024px), enable navigation with Left and Right Keys
     } else if ($('.main-nav__mobile-toggle').is(':hidden')) {
@@ -227,9 +269,9 @@ function dropdownMenu() {
 
     // Close dropdown menus and set aria labels accordingly when it no longer has focus
     if ($('.main-nav__mobile-toggle').is(':hidden')) {
-      $('.main-nav__link--dropdown-expanded ~ .dropdown-nav__list').focusout(function() {
-        $(this).slideUp(200).attr('aria-hidden', true);
-        $(this).prev().removeClass('main-nav__link--dropdown-expanded').addClass('main-nav__link--dropdown').attr('aria-expanded', false);
+      $('.page-header, .main, .page-footer').click(function() {
+        $('.dropdown-nav__list').slideUp(200).attr('aria-hidden', true);
+        $('.main-nav__link--dropdown-expanded').removeClass('main-nav__link--dropdown-expanded').addClass('main-nav__link--dropdown').attr('aria-expanded', false);
       })
     }
   })
@@ -240,12 +282,6 @@ function dropdownMenu() {
 
       e.preventDefault();
       _toggleDropdownMenus(this);
-      setTimeout(function() {
-        if ($this.hasClass('main-nav__link--dropdown-expanded')) {
-          alert('what');
-          $this.next().find('.dropdown-nav__item:first-child .dropdown-nav__link').focus(); // If a dropdown menu is open, set focus on its first menu link
-        }
-      }, 250)
     }
   })
 
@@ -284,6 +320,12 @@ function dropdownMenu() {
       } else if (e.keyCode == 38) {
         e.preventDefault();
         $this.parent().prev().find('.dropdown-nav__link').focus();
+      }
+
+      // ESC Key to collapse an expanded dropdown menu
+      if (e.keyCode == 27) {
+        $('.dropdown-nav__list').slideUp(200).attr('aria-hidden', true);
+        $('.main-nav__link--dropdown-expanded').removeClass('main-nav__link--dropdown-expanded').addClass('main-nav__link--dropdown').attr('aria-expanded', false).focus();
       }
   })
 }
