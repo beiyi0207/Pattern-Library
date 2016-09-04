@@ -2,34 +2,40 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="stylesheets/_icons.css" rel="stylesheet">
-    <link href="stylesheets/_typography.css" rel="stylesheet">
-    <link href="stylesheets/_layout.css" rel="stylesheet">
-    <link href="stylesheets/_nav.css" rel="stylesheet">
-    <link href="stylesheets/base-colors.css" rel="stylesheet">
+    <link href="../stylesheets/_icons.css" rel="stylesheet">
+    <link href="../stylesheets/_typography.css" rel="stylesheet">
+    <link href="../stylesheets/_layout.css" rel="stylesheet">
+    <link href="../stylesheets/_nav.css" rel="stylesheet">
+    <link href="../stylesheets/base-colors.css" rel="stylesheet">
 
-    <script src="js/jquery.js"></script>
-    <script src="js/nav.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/nav.js"></script>
   </head>
 
   <body>
+    <ul class="skiplinks" id="skiplinks">
+      <li class="skiplinks__item"><a href="#main-contents" class="link skiplinks__link">To Content</a></li>
+      <li class="skiplinks__item"><a href="#main-nav" class="link skiplinks__link">To Main Menu</a></li>
+      <li class="skiplinks__item"><a href="#page-footer" class="link skiplinks__link">To Footer</a></li>
+    </ul>
+
     <div class="app-container">
       <header class="page-header">
-        <button type="button" class="main-nav__mobile-toggle main-nav__mobile-toggle--page-header" aria-haspopup="true" aria-owns="main-nav" aria-expanded="false" aria-hidden="true"></button>
+        <button id="main-nav-toggle" type="button" class="main-nav__mobile-toggle main-nav__mobile-toggle--page-header" aria-haspopup="true" aria-expanded="false" aria-owns="main-nav" aria-hidden="false" aria-label="show or hide main menu"></button>
         <div class="page-header__wrapper">
           <h1 class="page-header__h1">Colors</h1>
           <p class="page-header__description">May the Responsiveness and Accessibility be with you...</p>
         </div>
       </header>
 
-      <nav class="main-nav">
+      <nav class="main-nav" id="main-nav" aria-hidden="true">
         <ul class="main-nav__list">
           <li class="main-nav__item">
             <a href="#!" class="main-nav__link"><span class="main-nav__icon icon-home"></span> Home</a>
           </li>
           <li class="main-nav__item main-nav__item--dropdown">
-            <a href="#!" class="main-nav__link main-nav__link--dropdown">Base</a>
-            <ul class="dropdown-nav__list">
+            <a href="#!" class="main-nav__link main-nav__link--dropdown" aria-haspopup="true" aria-expanded="false" aria-owns="dropdown-menu-base" aria-label="show or hide dropdown menu">Base</a>
+            <ul id="dropdown-menu-base" class="dropdown-nav__list" aria-hidden="true">
               <li class="dropdown-nav__item">
                 <a href="base__colors.html" class="dropdown-nav__link dropdown-nav__link--current">Colors</a>
               </li>
@@ -45,8 +51,8 @@
             </ul>
           </li>
           <li class="main-nav__item main-nav__item--dropdown">
-            <a href="#!" class="main-nav__link main-nav__link--dropdown">Modules</a>
-            <ul class="dropdown-nav__list">
+            <a href="#!" class="main-nav__link main-nav__link--dropdown" aria-haspopup="true" aria-expanded="false" aria-owns="dropdown-menu-components" aria-label="show or hide dropdown menu">Components</a>
+            <ul id="dropdown-menu-components" class="dropdown-nav__list" aria-hidden="true">
               <li class="dropdown-nav__item">
                 <a href="#" class="dropdown-nav__link">Alerts</a>
               </li>
@@ -69,7 +75,7 @@
                 <a href="#" class="dropdown-nav__link">Forms</a>
               </li>
               <li class="dropdown-nav__item">
-                <a href="#" class="dropdown-nav__link">Navigations</a>
+                <a href="../components/navigation/component_navigations.html" class="dropdown-nav__link">Navigations</a>
               </li>
             </ul>
           </li>
@@ -82,7 +88,27 @@
       </nav>
 
       <main class="main">
-        <section class="blocks">
+        <nav class="contents">
+          <details>
+            <summary id="main-contents">Contents</summary>
+            <ul class="contents__list">
+              <li class="contents__item">
+                <a class="link contents__link" href="#base-colors">Base Colors</a>
+              </li>
+              <li class="contents__item">
+                <a class="link contents__link" href="#button-colors">Button Colors</a>
+              </li>
+              <li class="contents__item">
+                <a class="link contents__link" href="#link-colors">Link Colors</a>
+              </li>
+              <li class="contents__item">
+                <a class="link contents__link" href="#alerts-colors">Alerts Colors</a>
+              </li>
+            </ul>
+          </details>
+        </nav>
+
+        <section class="blocks" id="base-colors">
           <h2>Base Colors</h2>
           <section class="color-block__container">
             <div class="color-block color-block--dropdown-background">
@@ -109,7 +135,7 @@
       	  </section>
         </section>
 
-        <section class="blocks">
+        <section class="blocks" id="button-colors">
           <h2>Button Colors</h2>
           <section class="color-block__container">
             <div class="color-block color-block--primary-button-font">
@@ -139,7 +165,7 @@
           </section>
         </section>
 
-        <section class="blocks">
+        <section class="blocks" id="link-colors">
           <h2>Link Colors</h2>
           <section class="color-block__container">
             <div class="color-block color-block--link-default">
@@ -154,7 +180,7 @@
           </section>
         </section>
 
-        <section class="blocks">
+        <section class="blocks" id="alerts-colors">
           <h2>Alerts Colors</h2>
           <section class="color-block__container">
             <div class="color-block color-block--alert-default-font">
@@ -190,6 +216,8 @@
           </section>
         </section>
       </main>
+
+      <footer id="page-footer" class="page-footer">&copy; 2016 All rights reserved.</footer>
     </div>
   </body>
 

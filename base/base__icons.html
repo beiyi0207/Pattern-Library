@@ -2,34 +2,40 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="stylesheets/_icons.css" rel="stylesheet">
-    <link href="stylesheets/_typography.css" rel="stylesheet">
-    <link href="stylesheets/_layout.css" rel="stylesheet">
-    <link href="stylesheets/_nav.css" rel="stylesheet">
-    <link href="stylesheets/base-icons.css" rel="stylesheet">
+    <link href="../stylesheets/_icons.css" rel="stylesheet">
+    <link href="../stylesheets/_typography.css" rel="stylesheet">
+    <link href="../stylesheets/_layout.css" rel="stylesheet">
+    <link href="../stylesheets/_nav.css" rel="stylesheet">
+    <link href="../stylesheets/base-icons.css" rel="stylesheet">
 
-    <script src="js/jquery.js"></script>
-    <script src="js/nav.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/nav.js"></script>
   </head>
 
   <body>
+    <ul class="skiplinks" id="skiplinks">
+      <li class="skiplinks__item"><a href="#main-contents" class="link skiplinks__link">To Content</a></li>
+      <li class="skiplinks__item"><a href="#main-nav" class="link skiplinks__link">To Main Menu</a></li>
+      <li class="skiplinks__item"><a href="#page-footer" class="link skiplinks__link">To Footer</a></li>
+    </ul>
+
     <div class="app-container">
       <header class="page-header">
-        <button type="button" class="main-nav__mobile-toggle main-nav__mobile-toggle--page-header" aria-haspopup="true" aria-owns="main-nav" aria-expanded="false" aria-hidden="true"></button>
+        <button id="main-nav-toggle" type="button" class="main-nav__mobile-toggle main-nav__mobile-toggle--page-header" aria-haspopup="true" aria-expanded="false" aria-owns="main-nav" aria-hidden="false" aria-label="show or hide main menu"></button>
         <div class="page-header__wrapper">
           <h1 class="page-header__h1">Icons</h1>
           <p class="page-header__description">May the Responsiveness and Accessibility be with you...</p>
         </div>
       </header>
 
-      <nav class="main-nav">
+      <nav class="main-nav" id="main-nav" aria-hidden="true">
         <ul class="main-nav__list">
           <li class="main-nav__item">
             <a href="#!" class="main-nav__link"><span class="main-nav__icon icon-home"></span> Home</a>
           </li>
           <li class="main-nav__item main-nav__item--dropdown">
-            <a href="#!" class="main-nav__link main-nav__link--dropdown">Base</a>
-            <ul class="dropdown-nav__list">
+            <a href="#!" class="main-nav__link main-nav__link--dropdown" aria-haspopup="true" aria-expanded="false" aria-owns="dropdown-menu-base" aria-label="show or hide dropdown menu">Base</a>
+            <ul id="dropdown-menu-base" class="dropdown-nav__list" aria-hidden="true">
               <li class="dropdown-nav__item">
                 <a href="base__colors.html" class="dropdown-nav__link">Colors</a>
               </li>
@@ -45,8 +51,8 @@
             </ul>
           </li>
           <li class="main-nav__item main-nav__item--dropdown">
-            <a href="#!" class="main-nav__link main-nav__link--dropdown">Modules</a>
-            <ul class="dropdown-nav__list">
+            <a href="#!" class="main-nav__link main-nav__link--dropdown" aria-haspopup="true" aria-expanded="false" aria-owns="dropdown-menu-components" aria-label="show or hide dropdown menu">Components</a>
+            <ul id="dropdown-menu-components" class="dropdown-nav__list" aria-hidden="true">
               <li class="dropdown-nav__item">
                 <a href="#" class="dropdown-nav__link">Alerts</a>
               </li>
@@ -69,7 +75,7 @@
                 <a href="#" class="dropdown-nav__link">Forms</a>
               </li>
               <li class="dropdown-nav__item">
-                <a href="#" class="dropdown-nav__link">Navigations</a>
+                <a href="../components/navigation/component_navigations.html" class="dropdown-nav__link">Navigations</a>
               </li>
             </ul>
           </li>
@@ -81,10 +87,30 @@
         </ul>
       </nav>
 
-      <main class="main">
+      <main class="main" class="main-contents">
+        <nav class="contents">
+          <details>
+            <summary id="main-contents">Contents</summary>
+            <ul class="contents__list">
+              <li class="contents__item">
+                <a class="link contents__link" href="#icon-font">Icon font</a>
+              </li>
+              <li class="contents__item">
+                <a class="link contents__link" href="#icon-class">Using with icon classes</a>
+              </li>
+              <li class="contents__item">
+                <a class="link contents__link" href="#sass-variables">Using with icon classes</a>
+              </li>
+              <li class="contents__item">
+                <a class="link contents__link" href="#icon-list">Icon List</a>
+              </li>
+            </ul>
+          </details>
+        </nav>
+
         <section class="blocks blocks--multi-columns">
           <div class="icon-block__description">
-            <h2>ICON FONT</h2>
+            <h2 id="icon-font">ICON FONT</h2>
 
             <p>With an icon font, we can:</p>
             <ul>
@@ -97,7 +123,7 @@
             </ul>
             <p><a class="link" href="https://icomoon.io/app/#/select" target="blank">IcoMoon</a> allows us to make a custom icon font to keep the font small (only including the icons we'll actually use) and allow us to use icons from multiple free and paid font icon collections in one file.</p>
 
-            <h2 class="icon-block__h2">USING WITH ICON CLASSES</h2>
+            <h2 class="icon-block__h2" id="icon-classes">USING WITH ICON CLASSES</h2>
 
             <p>Icon classes can be applied to any element and will make use of the <code>::before</code> pseudo-class. It's usually easiest to insert icons with an empty <code>&lt;span&gt;</code> element. Twitter Bootstrap's convention is to use an <code>&lt;i&gt;</code> tag, but that will fail WCAG Level AA accessibility tests, even though <code>&lt;i&gt;</code> has perfectly acceptable usage (as an icon is not one of them).</p>
 
@@ -105,7 +131,7 @@
 
             <p>Produce: <span class="icon-home"></span></p>
 
-            <h2 class="icon-block__h2">USING WITH SASS VARIABLES</h2>
+            <h2 class="icon-block__h2" id="sass-variables">USING WITH SASS VARIABLES</h2>
 
             <p>The Sass variable method is great to gain greater control over an icon's styling, to use more than one icon on an element, or to use <code>::after</code> instead of <code>::before</code>.</p>
 
@@ -120,7 +146,7 @@
           </div>
 
           <div class="icon-block__icon-list">
-            <h2>ICON LIST</h2>
+            <h2 id="icon-list">ICON LIST</h2>
             <table class="icon-block__table">
               <thead>
                 <tr>
@@ -521,6 +547,8 @@
             </table>
           </div>
       </main>
+
+      <footer id="page-footer" class="page-footer">&copy; 2016 All rights reserved.</footer>
     </div>
   </body>
 

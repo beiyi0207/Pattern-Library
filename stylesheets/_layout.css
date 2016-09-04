@@ -39,7 +39,7 @@ summary {
   position: relative;
   left: 250px;
   width: calc(100% - 250px);
-  padding-bottom: 3rem;
+  padding: 0.25rem 0 3rem;
   background: #fff;
 }
 
