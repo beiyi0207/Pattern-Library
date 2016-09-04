@@ -40,6 +40,10 @@ p, dd, td, a, li, figcaption, img {
   font-family: 'proxima-nova-light';
 }
 
+nav {
+  font-family: 'proxima-nova';
+}
+
 /* Typography */
 
 body {

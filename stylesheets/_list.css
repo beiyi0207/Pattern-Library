@@ -1,0 +1,25 @@
+.checklist {
+  list-style: none;
+}
+
+.checklist__item {
+  text-indent: -1.3em;
+}
+
+.checklist__item:before {
+  font-family: 'icomoon';
+  content: '';
+  margin-right: 0.5em;
+  position: relative;
+  top: 0.15ex;
+}
+
+.checklist__item--done:before {
+  content: '\f058';
+  color: #70bf41;
+}
+
+.checklist__item--not-done:before {
+  content: '\f057';
+  color: #de7563;
+}

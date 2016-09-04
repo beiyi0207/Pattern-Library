@@ -1,0 +1,16 @@
+/* Flat button */
+.flat-button, .flat-button:hover {
+  background: none;
+  border: none;
+  font-variant: small-caps;
+  cursor: pointer;
+  color: #0a5679;
+}
+
+.flat-button--inline {
+  vertical-align: baseline;
+}
+
+.flat-button--caution {
+  color: #bc3e28;
+}
