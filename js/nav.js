@@ -5,9 +5,9 @@ $(document).ready(function(){
   dropdownMenu();
 });
 
-$(window).resize(function(){
-  location.reload();
-});
+// $(window).resize(function(){
+//  location.reload();
+// });
 
 
 /* Shared functions */
