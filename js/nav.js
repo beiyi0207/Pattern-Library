@@ -143,9 +143,9 @@ function skipLinks() {
           })
           .focus();
 
-        $('.app-container').scrollTo($target, 100);
+//        $('.app-container').scrollTo($target, 100);
+//        return false;
       }
-      return false;
     })
   })
 }
