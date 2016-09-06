@@ -87,15 +87,19 @@ function skipLinks() {
     // On right arrow, set focus on next skiplink link. If the focus is already on the last skiplink, jump to the first skiplink.
     if (e.keyCode == 39 && $this.parent().is(':last-child')) {
       $this.parent().siblings().first().find('.skiplinks__link').focus();
+      return false;
     } else if (e.keyCode == 39) {
       $this.parent().next().find('.skiplinks__link').focus();
+      return false;
     }
 
     // On left arrow, set focus on previous skiplink link. If the focus is already on the first skiplink, jump to the last skiplink.
     if (e.keyCode == 37 && $this.parent().is(':first-child')) {
       $this.parent().siblings().last().find('.skiplinks__link').focus();
+      return false;
     } else if (e.keyCode == 37) {
       $this.parent().prev().find('.skiplinks__link').focus();
+      return false;
     }
 
     // When the user press Enter on "To Main Menu", open the main-nav drawer and set focus on the first main menu link.
@@ -103,6 +107,7 @@ function skipLinks() {
       if (($('.main-nav__mobile-toggle').is(':visible') && $('.app-container').hasClass('app-container--drawer-open') == false) || $('.main-nav__mobile-toggle').is(':hidden')) {
         _openMainNavDrawer();
         $('#main-nav').find('.main-nav__item').first().find('.main-nav__link:first').focus();
+        return false;
       }
     } else if (e.keyCode == 13) {
       var $target = $($(this).attr('href'));
@@ -113,8 +118,7 @@ function skipLinks() {
           $target.removeAttr('tabindex');
         })
         .focus();
-
-      $('.app-container').scrollTo($target, 100);
+      return false;
     }
   })
 
@@ -141,6 +145,7 @@ function skipLinks() {
 
         $('.app-container').scrollTo($target, 100);
       }
+      return false;
     })
   })
 }
@@ -153,12 +158,14 @@ function mainNavToggle() {
     } else {
       _openMainNavDrawer();
     }
+    return false;
   })
 
   $('.page-header__wrapper, .main, .page-footer').click(function() {
     if ($('.app-container').hasClass('app-container--drawer-open')) {
       _closeMainNavDrawer();
     }
+    return false;
   })
 
   // Keyboard event
@@ -173,6 +180,7 @@ function mainNavToggle() {
         $('#main-nav').find('.main-nav__item').first().find('.main-nav__link:first').focus();
       }
     }
+    return false;
   })
 }
 
@@ -184,44 +192,53 @@ function mainNavKeyboardSupport() {
     if ($('.main-nav__mobile-toggle').is(':visible') && $('.app-container').hasClass('app-container--drawer-open')) {
       if (e.keyCode == 40 || e.keyCode == 38) {
         e.preventDefault(); // Prevent scrolling the page when press Up or Down key
+        return false;
       }
 
       // Down Arrow Key
       // If at the anchor link of an open dropdown menu, press Down to navigate to the first link of that dropdown menu
       if (e.keyCode == 40 && $this.hasClass('main-nav__link--dropdown-expanded')) {
         $this.next().find('.dropdown-nav__item:first-child .dropdown-nav__link').focus();
+        return false;
 
       // If already at the last link of the last main-nav list, press Down to navigate to the mobile toggle
       } else if (e.keyCode == 40 && $this.parent().is(':last-child') && $this.closest('.main-nav__list').is(':last-child')) {
         $('.main-nav__mobile-toggle').focus();
+        return false;
 
         // Otherwise if already at last link, press Down to navigate to the first link of the next main-nav list.
       } else if (e.keyCode == 40 && $this.parent().is(':last-child')) {
         $this.closest('.main-nav__list').next().find('.main-nav__link').first().focus();
+        return false;
 
         // Otherwise, press Down to navigate to the next main-nav link
       } else if (e.keyCode == 40) {
         $this.parent().next().find('.main-nav__link').focus();
+        return false;
       }
 
       // Up Arrow Key
       // If already at the first link of the first main-nav list, press Up to navigate to the mobile toggle
       if (e.keyCode == 38 && $this.parent().is(':first-child') && $this.closest('.main-nav__list').is(':first-child')) {
         $('.main-nav__mobile-toggle').focus();
+        return false;
 
         // Otherwise if already at first link, press Up to navigate to the last link of the previous main-nav list.
       } else if (e.keyCode == 38 && $this.parent().is(':first-child')) {
         $this.closest('.main-nav__list').prev().find('.main-nav__item').last().find('.main-nav__link').focus();
+        return false;
 
         // Otherwise, press Up to navigate to the previous main-nav link
       } else if (e.keyCode == 38) {
         $this.parent().prev().find('.main-nav__link').focus();
+        return false;
       }
 
       // ESC Key to close the main nav drawer
       if (e.keyCode == 27 && $('.app-container').hasClass('app-container--drawer-open')) {
         _closeMainNavDrawer();
         $('.main-nav__mobile-toggle').focus();
+        return false;
       }
 
 
@@ -236,28 +253,34 @@ function mainNavKeyboardSupport() {
       // If already at the last link of the last main-nav list, press Right to navigate to the first link in the first main-nav list
       if (e.keyCode == 39 && $this.parent().is(':last-child') && $this.closest('.main-nav__list').is(':last-child')) {
         $('.main-nav__list:first-child .main-nav__item:first-child .main-nav__link').focus();
+        return false;
 
         // Otherwise if already at last link, press Down to navigate to the first link of the next main-nav list.
       } else if (e.keyCode == 39 && $this.parent().is(':last-child')) {
         $this.closest('.main-nav__list').next().find('.main-nav__link').first().focus();
+        return false;
 
         // Otherwise, press Down to navigate to the next main-nav link
       } else if (e.keyCode == 39) {
         $this.parent().next().find('.main-nav__link').focus();
+        return false;
       }
 
       // Left Arrow Key
       // If already at the first link of the first main-nav list, press Left to navigate to the last link in the last main-nav list
       if (e.keyCode == 37 && $this.parent().is(':first-child') && $this.closest('.main-nav__list').is(':first-child')) {
         $('.main-nav__list:last-child .main-nav__item:last-child .main-nav__link').focus();
+        return false;
 
         // Otherwise if already at first link, press Left to navigate to the last link of the previous main-nav list.
       } else if (e.keyCode == 37 && $this.parent().is(':first-child')) {
         $this.closest('.main-nav__list').prev().find('.main-nav__item').last().find('.main-nav__link').focus();
+        return false;
 
         // Otherwise, press Up to navigate to the previous main-nav link
       } else if (e.keyCode == 37) {
         $this.parent().prev().find('.main-nav__link').focus();
+        return false;
       }
     }
   });
@@ -272,6 +295,7 @@ function dropdownMenu() {
       $('.page-header, .main, .page-footer').click(function() {
         $('.dropdown-nav__list').slideUp(200).attr('aria-hidden', true);
         $('.main-nav__link--dropdown-expanded').removeClass('main-nav__link--dropdown-expanded').addClass('main-nav__link--dropdown').attr('aria-expanded', false);
+        return false;
       })
     }
   })
@@ -282,6 +306,7 @@ function dropdownMenu() {
 
       e.preventDefault();
       _toggleDropdownMenus(this);
+      return false;
     }
   })
 
@@ -293,21 +318,25 @@ function dropdownMenu() {
       if (e.keyCode == 40 && $this.parent().is(':last-child') && $this.closest('.main-nav__item').is(':last-child') && $this.closest('.main-nav__list').is(':last-child')) {
         e.preventDefault(); // Prevent scrolling the page when press down key
         $('.main-nav__mobile-toggle').focus();
+        return false;
 
         // Otherwise if already at last link of the last dropwdown menu, press Down to navigate to the first link of the next main-nav list.
       } else if (e.keyCode == 40 && $this.parent().is(':last-child') && $this.closest('.main-nav__item').is(':last-child')) {
         e.preventDefault();
         $this.closest('.main-nav__list').next().find('.main-nav__link').first().focus();
+        return false;
 
         // Otherwise if already at last link of the dropwdown menu, press Down to navigate to the next main-nav link.
       } else if (e.keyCode == 40 && $this.parent().is(':last-child')) {
         e.preventDefault();
         $this.closest('.main-nav__item').next().find('.main-nav__link').focus();
+        return false;
 
         // Otherwise, press Down to navigate to the next dropdown link
       } else if (e.keyCode == 40) {
         e.preventDefault();
         $this.parent().next().find('.dropdown-nav__link').focus();
+        return false;
       }
 
       // Up Arrow Key
@@ -315,17 +344,20 @@ function dropdownMenu() {
       if (e.keyCode == 38 && $this.parent().is(':first-child')) {
         e.preventDefault();
         $this.closest('.dropdown-nav__list').prev().focus();
+        return false;
 
         // Otherwise, press Up to navigate to the main-nav link
       } else if (e.keyCode == 38) {
         e.preventDefault();
         $this.parent().prev().find('.dropdown-nav__link').focus();
+        return false;
       }
 
       // ESC Key to collapse an expanded dropdown menu
       if (e.keyCode == 27) {
         $('.dropdown-nav__list').slideUp(200).attr('aria-hidden', true);
         $('.main-nav__link--dropdown-expanded').removeClass('main-nav__link--dropdown-expanded').addClass('main-nav__link--dropdown').attr('aria-expanded', false).focus();
+        return false;
       }
   })
 }

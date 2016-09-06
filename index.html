@@ -2,14 +2,14 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="../stylesheets/_icons.css" rel="stylesheet">
-    <link href="../stylesheets/_typography.css" rel="stylesheet">
-    <link href="../stylesheets/_layout.css" rel="stylesheet">
-    <link href="../stylesheets/_nav.css" rel="stylesheet">
-    <link href="../stylesheets/base-fonts.css" rel="stylesheet">
+    <link href="stylesheets/_icons.css" rel="stylesheet">
+    <link href="stylesheets/_typography.css" rel="stylesheet">
+    <link href="stylesheets/_layout.css" rel="stylesheet">
+    <link href="stylesheets/_nav.css" rel="stylesheet">
+    <link href="stylesheets/base-colors.css" rel="stylesheet">
 
-    <script src="../js/jquery.js"></script>
-    <script src="../js/nav.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/nav.js"></script>
   </head>
 
   <body>
@@ -23,7 +23,7 @@
       <header class="page-header">
         <button id="main-nav-toggle" type="button" class="main-nav__mobile-toggle main-nav__mobile-toggle--page-header" aria-haspopup="true" aria-expanded="false" aria-owns="main-nav" aria-hidden="false" aria-label="show or hide main menu"></button>
         <div class="page-header__wrapper">
-          <h1 class="page-header__h1">Fonts</h1>
+          <h1 class="page-header__h1">BREC Styleguide</h1>
           <p class="page-header__description">May the Responsiveness and Accessibility be with you...</p>
         </div>
       </header>
@@ -31,22 +31,22 @@
       <nav class="main-nav" id="main-nav" aria-hidden="true">
         <ul class="main-nav__list">
           <li class="main-nav__item">
-            <a href="../index.html" class="main-nav__link"><span class="main-nav__icon icon-home"></span> Home</a>
+            <a href="#!" class="main-nav__link main-nav__link--current"><span class="main-nav__icon icon-home"></span> Home</a>
           </li>
           <li class="main-nav__item main-nav__item--dropdown">
             <a href="#!" class="main-nav__link main-nav__link--dropdown" aria-haspopup="true" aria-expanded="false" aria-owns="dropdown-menu-base" aria-label="show or hide dropdown menu">Base</a>
             <ul id="dropdown-menu-base" class="dropdown-nav__list" aria-hidden="true">
               <li class="dropdown-nav__item">
-                <a href="base__colors.html" class="dropdown-nav__link">Colors</a>
+                <a href="base/base__colors.html" class="dropdown-nav__link">Colors</a>
               </li>
               <li class="dropdown-nav__item">
-                <a href="base__fonts.html" class="dropdown-nav__link dropdown-nav__link--current">Fonts</a>
+                <a href="base/base__fonts.html" class="dropdown-nav__link">Fonts</a>
               </li>
               <li class="dropdown-nav__item">
-                <a href="base__typography.html" class="dropdown-nav__link">Typography</a>
+                <a href="base/base__typography.html" class="dropdown-nav__link">Typography</a>
               </li>
               <li class="dropdown-nav__item">
-                <a href="base__icons.html" class="dropdown-nav__link">Icons</a>
+                <a href="base/base__icons.html" class="dropdown-nav__link">Icons</a>
               </li>
             </ul>
           </li>
@@ -75,7 +75,7 @@
                 <a href="#" class="dropdown-nav__link">Forms</a>
               </li>
               <li class="dropdown-nav__item">
-                <a href="../components/navigation/component_navigations.html" class="dropdown-nav__link">Navigations</a>
+                <a href="components/navigation/component_navigations.html" class="dropdown-nav__link">Navigations</a>
               </li>
             </ul>
           </li>
@@ -88,56 +88,9 @@
       </nav>
 
       <main class="main">
-        <nav class="contents">
-          <details>
-            <summary id="main-contents">Contents</summary>
-            <ul class="contents__list">
-              <li class="contents__item">
-                <a class="link contents__link" href="#fonts">Fonts</a>
-              </li>
-            </ul>
-          </details>
-        </nav>
-
-        <section class="blocks" id="fonts">
-          <section class="font-block__container">
-            <div class="font-block font-block--light">
-              <span>Proxima Nova Light</span>
-              <div class="font-block__example-container">
-                <div class="font-block__summary">Aa</div>
-                <div class="font-block__example">a b c d e f g h i j k l m n o p q r s t u v w x y z<br>
-                A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>
-                1 2 3 4 5 6 7 8 9 0</div>
-              </div>
-            </div>
-            <div class="font-block font-block--regular">
-              <span>Proxima Nova Regular</span>
-              <div class="font-block__example-container">
-                <div class="font-block__summary">Aa</div>
-                <div class="font-block__example">a b c d e f g h i j k l m n o p q r s t u v w x y z<br>
-                A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>
-                1 2 3 4 5 6 7 8 9 0</div>
-              </div>
-            </div>
-            <div class="font-block font-block--bold">
-              <span>Proxima Nova Bold</span>
-              <div class="font-block__example-container">
-                <div class="font-block__summary">Aa</div>
-                <div class="font-block__example">a b c d e f g h i j k l m n o p q r s t u v w x y z<br>
-                A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>
-                1 2 3 4 5 6 7 8 9 0</div>
-              </div>
-            </div>
-            <div class="font-block font-block--helvetica">
-              <span>HelveticaNeue, Helvetica, arial, verdana, sans-serif</span>>
-              <div class="font-block__example-container">
-                <div class="font-block__summary">Aa</div>
-                <div class="font-block__example">a b c d e f g h i j k l m n o p q r s t u v w x y z<br>
-                A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>
-                1 2 3 4 5 6 7 8 9 0</div>
-              </div>
-            </div>
-          </section>
+        <section class="blocks">
+          <h2>Overview</h2>
+          <p>To be added...</p>
         </section>
       </main>
 
